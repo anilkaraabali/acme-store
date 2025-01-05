@@ -7,7 +7,7 @@ export const getServerSideProps = (async (ctx) => ({
   props: {
     messages: pick(
       (await import(`../../messages/${ctx.locale}.json`)).default,
-      ['Common']
+      ['Common', 'Home'],
     ),
   },
 })) satisfies GetServerSideProps<HomeViewProps>;

@@ -26,10 +26,10 @@ const Header = () => {
 
   return (
     <NextUINavbar maxWidth='xl' onMenuOpenChange={setIsMenuOpen}>
-      <NavbarContent className='gap-6 sm:basis-full' justify='start'>
+      <NavbarContent justify='start'>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? 'Close menu' : 'Open menu'}
-          className='lg:hidden'
+          className='md:hidden'
         />
         <NavbarBrand>
           <NextLink
@@ -45,7 +45,7 @@ const Header = () => {
         </NavbarBrand>
       </NavbarContent>
 
-      <NavbarContent className='hidden gap-8 lg:flex' justify='center'>
+      <NavbarContent className='hidden gap-8 md:flex' justify='center'>
         {siteConfig.navMenuItems.map((item) =>
           item.children ? (
             <Dropdown key={item.href}>
@@ -111,13 +111,7 @@ const Header = () => {
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
               <Link
-                color={
-                  index === 2
-                    ? 'primary'
-                    : index === siteConfig.navMenuItems.length - 1
-                      ? 'danger'
-                      : 'foreground'
-                }
+                color='foreground'
                 href='#'
                 size='lg'
               >
