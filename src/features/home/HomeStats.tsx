@@ -16,7 +16,7 @@ const HomeStats: FC = () => {
   );
 
   return (
-    <section className='relative my-12 lg:my-24' id='stats'>
+    <section className='relative my-16' id='stats'>
       <Image
         alt='Home Stats'
         className='h-56 w-full bg-gray-50 object-cover lg:absolute lg:inset-y-0 lg:left-0 lg:h-full lg:w-1/2'
@@ -34,7 +34,7 @@ const HomeStats: FC = () => {
             <p className='mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-50'>
               {t('subtitle')}
             </p>
-            <p className='mt-6 text-lg text-gray-600 dark:text-gray-400'>
+            <p className='mt-6 text-lg text-gray-600 dark:text-gray-300'>
               {t('description')}
             </p>
             <dl className='mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2'>
@@ -43,7 +43,7 @@ const HomeStats: FC = () => {
                   className='flex flex-col gap-y-3 border-l border-gray-900 pl-6 dark:border-gray-50'
                   key={index}
                 >
-                  <dt className='text-sm text-gray-600 dark:text-gray-400'>
+                  <dt className='text-sm text-gray-600 dark:text-gray-300'>
                     {stat.title}
                   </dt>
                   <dd className='order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-50'>
