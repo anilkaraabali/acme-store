@@ -16,7 +16,7 @@ const nextConfig = {
   images: {
     remotePatterns: [
       {
-        hostname: 'cdn.prod.website-files.com',
+        hostname: 'images.unsplash.com',
         pathname: '/**',
         port: '',
         protocol: 'https',

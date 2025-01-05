@@ -2,8 +2,7 @@ import type { AppProps } from 'next/app';
 
 import { ErrorBoundary } from '@/components/error';
 import { fontMono, fontSans } from '@/config/fonts';
-import { DefaultLayout } from '@/layouts/default';
-import { Head } from '@/layouts/head';
+import { DefaultLayout, Head } from '@/layouts';
 import '@/styles/globals.css';
 import { NextUIProvider } from '@nextui-org/react';
 import { NextPage } from 'next';
@@ -32,6 +31,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           <NextIntlClientProvider
             locale={router.locale}
             messages={pageProps.messages}
+            timeZone='Europe/Istanbul'
           >
             <Head />
             {getLayout(<Component {...pageProps} />)}
