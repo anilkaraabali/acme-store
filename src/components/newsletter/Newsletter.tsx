@@ -56,7 +56,7 @@ const Newsletter = () => {
 
   return (
     <section
-      className='mx-auto flex h-auto w-full justify-center'
+      className='mx-auto flex h-auto w-full justify-center pt-16'
       id='newsletter'
     >
       <div className='relative isolate flex w-full max-w-7xl flex-col overflow-hidden bg-gray-900 px-6 py-24 text-background shadow sm:px-24 xl:rounded-3xl'>

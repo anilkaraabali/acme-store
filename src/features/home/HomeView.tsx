@@ -1,5 +1,6 @@
 import { AbstractIntlMessages } from 'next-intl';
 
+import { HomeBlog } from './HomeBlog';
 import { HomeHero } from './HomeHero';
 import { HomeStats } from './HomeStats';
 
@@ -12,6 +13,7 @@ function HomeView() {
     <>
       <HomeHero />
       <HomeStats />
+      <HomeBlog />
     </>
   );
 }
