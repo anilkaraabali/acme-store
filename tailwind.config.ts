@@ -12,7 +12,12 @@ const config: Config = {
     aspectRatio: false,
   },
   darkMode: ['selector', '[data-theme="dark"]'],
-  plugins: [nextui(), aspectRatioPlugin],
+  plugins: [
+    nextui({
+      prefix: 'acme',
+    }),
+    aspectRatioPlugin,
+  ],
   theme: {
     extend: {
       aspectRatio: {

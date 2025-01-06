@@ -38,6 +38,7 @@
     "zod": "^3.24.1"
   },
   "devDependencies": {
+    "@svgr/webpack": "^8.1.0",
     "@tailwindcss/aspect-ratio": "^0.4.2",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
@@ -66,6 +67,7 @@
     "jest-environment-jsdom": "^29.7.0",
     "jest-next-dynamic": "^1.0.1",
     "lint-staged": "^15.2.9",
+    "loader-utils": "^3.3.1",
     "node-fetch": "^3.3.1",
     "postcss": "^8.4.49",
     "prettier": "^3.3.2",

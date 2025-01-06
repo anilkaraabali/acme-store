@@ -98,8 +98,10 @@ const Header = () => {
 
       <NavbarContent justify='end'>
         <Button
+          as={NextLink}
           color='primary'
           endContent={<LiaArrowRightSolid size={20} />}
+          href='/login'
           variant='shadow'
         >
           Log in
@@ -110,11 +112,7 @@ const Header = () => {
         <div className='mx-4 mt-2 flex flex-col gap-2'>
           {siteConfig.navMenuItems.map((item, index) => (
             <NavbarMenuItem key={`${item}-${index}`}>
-              <Link
-                color='foreground'
-                href='#'
-                size='lg'
-              >
+              <Link color='foreground' href='#' size='lg'>
                 {item.label}
               </Link>
             </NavbarMenuItem>

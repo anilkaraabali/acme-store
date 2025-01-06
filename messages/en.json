@@ -14,24 +14,46 @@
     },
     "cta": "Return to the homepage"
   },
+  "Auth": {
+    "login": {
+      "questionPrompt": "Have a question?",
+      "supportContact": "Contact us",
+      "title": "Log in or Sign up",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "cta": {
+        "google": "Continue with Google",
+        "facebook": "Continue with Facebook",
+        "email": "Continue with Email"
+      }
+    }
+  },
   "Common": {
     "newsletter": {
       "title": "Get notified when we’re launching",
       "description": "Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.",
-      "email": {
-        "label": "Email",
-        "placeholder": "Enter your email",
-        "required": "Email is required"
-      },
-      "errors": {
-        "email": "Invalid email. Email must be a valid email address"
-      },
       "cta": "Notify me",
       "alert": {
         "title": "Success!"
       }
+    },
+    "form": {
+      "email": {
+        "label": "Email",
+        "placeholder": "Enter your email",
+        "required": "Email address cannot be left blank",
+        "errorMessage": "Invalid email. Email must be a valid email address"
+      },
+      "password": {
+        "label": "Password",
+        "placeholder": "Enter your password",
+        "required": "Password cannot be left blank",
+        "errorMessage": {
+          "minLength": "Password must be at least 8 characters long"
+        }
+      }
     }
   },
+  "Dashboard": {},
   "Home": {
     "hero": {
       "title": "Data to enrich your online business",

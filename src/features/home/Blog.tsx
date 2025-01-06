@@ -48,7 +48,7 @@ const Card: FC<CardProps> = ({ author, image, publishDate, title, url }) => (
   </article>
 );
 
-const HomeBlog = () => {
+const Blog = () => {
   const t = useTranslations('Home.blog');
 
   return (
@@ -121,4 +121,4 @@ const HomeBlog = () => {
   );
 };
 
-export { HomeBlog };
+export { Blog };

@@ -1,17 +1,12 @@
-import type { NextRequest } from 'next/server';
-
-import { NextResponse, userAgent } from 'next/server';
+import { NextRequest, NextResponse, userAgent } from 'next/server';
 
 export default function middleware(req: NextRequest): NextResponse | undefined {
-  const { device, isBot } = userAgent(req);
-  const deviceType = device.type === 'mobile' ? 'mobile' : 'desktop';
+  const { isBot } = userAgent(req);
 
   if (isBot) {
     return NextResponse.rewrite('/404');
   } else {
     const requestHeaders = new Headers(req.headers);
-
-    requestHeaders.set('x-device-type', deviceType);
 
     return NextResponse.next({
       request: {
@@ -21,3 +16,8 @@ export default function middleware(req: NextRequest): NextResponse | undefined {
     });
   }
 }
+
+export const config = {
+  // https://nextjs.org/docs/app/building-your-application/routing/middleware#matcher
+  matcher: ['/((?!api|_next/static|_next/image|.*\\.png$).*)'],
+};
