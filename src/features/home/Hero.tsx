@@ -3,7 +3,7 @@ import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import { LiaArrowRightSolid } from 'react-icons/lia';
 
-const HomeHero: FC = () => {
+const Hero: FC = () => {
   const t = useTranslations('Home.hero');
 
   return (
@@ -49,4 +49,4 @@ const HomeHero: FC = () => {
   );
 };
 
-export { HomeHero };
+export { Hero };

@@ -2,7 +2,7 @@ import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FC, useMemo } from 'react';
 
-const HomeStats: FC = () => {
+const Stats: FC = () => {
   const t = useTranslations('Home.stats');
 
   const stats = useMemo(
@@ -59,4 +59,4 @@ const HomeStats: FC = () => {
   );
 };
 
-export { HomeStats };
+export { Stats };

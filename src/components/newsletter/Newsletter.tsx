@@ -10,7 +10,7 @@ type FormData = {
 };
 
 const Newsletter = () => {
-  const t = useTranslations('Common.newsletter');
+  const t = useTranslations('Common');
 
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -18,8 +18,8 @@ const Newsletter = () => {
   const schema: ZodType<FormData> = z.object({
     email: z
       .string()
-      .min(1, { message: t('email.required') })
-      .email(t('errors.email')),
+      .min(1, { message: t('form.email.required') })
+      .email(t('form.email.errorMessage')),
   });
 
   const {
@@ -61,10 +61,10 @@ const Newsletter = () => {
     >
       <div className='relative isolate flex w-full max-w-7xl flex-col overflow-hidden bg-gray-900 px-6 py-24 text-background shadow sm:px-24 xl:rounded-3xl'>
         <h2 className='text-center text-4xl font-semibold tracking-tight lg:text-5xl dark:text-white'>
-          {t('title')}
+          {t('newsletter.title')}
         </h2>
         <p className='mx-auto mt-6 max-w-lg text-center text-lg text-gray-300'>
-          {t('description')}
+          {t('newsletter.description')}
         </p>
         <Form
           className='mx-auto mt-10 w-full max-w-lg flex-row gap-4'
@@ -80,9 +80,9 @@ const Newsletter = () => {
                 errorMessage={errors.email?.message}
                 isInvalid={!!errors.email?.message}
                 isRequired
-                label={t('email.label')}
+                label={t('form.email.label')}
                 labelPlacement='inside'
-                placeholder={t('email.placeholder')}
+                placeholder={t('form.email.placeholder')}
                 size='sm'
                 type='email'
                 variant='flat'
@@ -96,7 +96,7 @@ const Newsletter = () => {
             type='submit'
             variant='solid'
           >
-            {submitted ? t('alert.title') : t('cta')}
+            {submitted ? t('newsletter.alert.title') : t('newsletter.cta')}
           </Button>
         </Form>
         <svg
