@@ -1,2 +1,2 @@
-export * from './Default';
-export * from './Head';
+export * from './default';
+export * from './head';
