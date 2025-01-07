@@ -82,10 +82,10 @@ const Newsletter = () => {
       id='newsletter'
     >
       <div className='relative isolate flex w-full max-w-7xl flex-col overflow-hidden bg-gray-900 px-6 py-24 text-background shadow sm:px-24 xl:rounded-3xl'>
-        <h2 className='text-center text-4xl font-semibold tracking-tight lg:text-5xl dark:text-white'>
+        <h2 className='text-center text-4xl font-semibold tracking-tight text-white lg:text-5xl'>
           {t('newsletter.title')}
         </h2>
-        <p className='mx-auto mt-6 max-w-lg text-center text-lg text-gray-300'>
+        <p className='mx-auto mt-6 max-w-lg text-center text-lg text-default-500'>
           {t('newsletter.description')}
         </p>
         <Form

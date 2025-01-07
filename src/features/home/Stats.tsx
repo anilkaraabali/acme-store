@@ -31,22 +31,18 @@ const Stats: FC = () => {
             <h2 className='text-base font-semibold text-primary'>
               {t('title')}
             </h2>
-            <p className='mt-2 text-pretty text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-50'>
+            <p className='mt-2 text-pretty text-4xl font-semibold tracking-tight text-default-900 sm:text-5xl'>
               {t('subtitle')}
             </p>
-            <p className='mt-6 text-lg text-gray-600 dark:text-gray-300'>
-              {t('description')}
-            </p>
+            <p className='mt-6 text-lg text-default-500'>{t('description')}</p>
             <dl className='mt-16 grid max-w-xl grid-cols-1 gap-8 sm:mt-20 sm:grid-cols-2'>
               {stats.map((stat, index) => (
                 <div
-                  className='flex flex-col gap-y-3 border-l border-gray-900 pl-6 dark:border-gray-50'
+                  className='flex flex-col gap-y-3 border-l border-default-900 pl-6'
                   key={index}
                 >
-                  <dt className='text-sm text-gray-600 dark:text-gray-300'>
-                    {stat.title}
-                  </dt>
-                  <dd className='order-first text-3xl font-semibold tracking-tight text-gray-900 dark:text-gray-50'>
+                  <dt className='text-sm text-default-500'>{stat.title}</dt>
+                  <dd className='order-first text-3xl font-semibold tracking-tight text-default-900'>
                     {stat.value}
                   </dd>
                 </div>

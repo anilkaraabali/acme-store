@@ -55,12 +55,10 @@ const Blog = () => {
     <section className='py-16' id='blog'>
       <div className='mx-auto max-w-7xl px-6 lg:px-8'>
         <div className='mx-auto max-w-2xl text-center'>
-          <h2 className='text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl dark:text-gray-50'>
+          <h2 className='text-balance text-4xl font-semibold tracking-tight sm:text-5xl'>
             {t('title')}
           </h2>
-          <p className='mt-2 text-lg text-gray-600 dark:text-gray-300'>
-            {t('description')}
-          </p>
+          <p className='mt-2 text-lg text-gray-500'>{t('description')}</p>
         </div>
         <div className='mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-20 gap-y-8 lg:mx-0 lg:max-w-none lg:grid-cols-3'>
           {[
