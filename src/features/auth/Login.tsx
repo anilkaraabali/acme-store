@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { NextPageWithLayout } from '@/pages/_app';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Divider, Form, Input } from '@nextui-org/react';
@@ -26,7 +27,7 @@ function Login() {
   const schema: ZodType<FormData> = z.object({
     email: z
       .string()
-      .min(1, { message: t('Common.form.email.required') })
+      .min(1, { message: t('Common.form.required') })
       .email(t('Common.form.email.errorMessage')),
   });
 
@@ -47,13 +48,11 @@ function Login() {
       setIsLoading(true);
 
       // Send data to your API
-      // eslint-disable-next-line no-console
-      console.log(data);
+      console.log('data', data);
 
       reset();
     } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
+      console.error('Login error', error);
     } finally {
       setIsLoading(false);
     }
@@ -71,7 +70,7 @@ function Login() {
                   <h1 className='text-3xl font-medium tracking-tight lg:text-4xl'>
                     {t('Auth.login.title')}
                   </h1>
-                  <p className='mt-2 text-gray-600 dark:text-gray-400'>
+                  <p className='mt-2 text-default-500'>
                     {t('Auth.login.description')}
                   </p>
                 </div>

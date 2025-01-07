@@ -1,15 +1,15 @@
 import type { GetServerSideProps } from 'next';
 
-import { DashboardProps } from '@/features/dashboard/Dashboard';
+import { SignUpProps } from '@/features/auth/SignUp';
 import { pick } from 'radash';
 
 export const getServerSideProps = (async (ctx) => ({
   props: {
     messages: pick(
       (await import(`../../messages/${ctx.locale}.json`)).default,
-      ['Common', 'Dashboard']
+      ['Common', 'Auth']
     ),
   },
-})) satisfies GetServerSideProps<DashboardProps>;
+})) satisfies GetServerSideProps<SignUpProps>;
 
-export { default } from '@/features/dashboard/Dashboard';
+export { default } from '@/features/auth/SignUp';

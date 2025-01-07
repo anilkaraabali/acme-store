@@ -11,16 +11,7 @@ const Footer: FC = () => (
     <div className='flex w-full max-w-7xl flex-col px-6 pb-8 pt-24'>
       <div className='flex flex-col lg:flex-row lg:justify-between lg:gap-8'>
         <div className='flex basis-4/12 flex-col gap-4'>
-          <Link
-            aria-label='Go to homepage'
-            className='flex items-center gap-1 text-current'
-            href='/'
-            isExternal
-            title='Go to homepage'
-          >
-            <Logo />
-            <p className='font-bold text-inherit'>ACME</p>
-          </Link>
+          <Logo />
           <p className='text-balance'>
             Making the world a better place through constructing elegant
             hierarchies.
@@ -87,9 +78,7 @@ const Footer: FC = () => (
       </div>
       <Divider className='mb-8 mt-12' />
       <div className='flex flex-col items-center justify-between gap-4 sm:flex-row'>
-        <p className='text-sm'>
-          © 2025 Your Company, Inc. All rights reserved.
-        </p>
+        <p className='text-sm'>© 2025 Acme Store, Inc. All rights reserved.</p>
         <div className='flex items-center gap-4'>
           <LanguageSwitch />
           <ThemeSwitch />

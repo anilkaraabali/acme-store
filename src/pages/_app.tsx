@@ -9,6 +9,7 @@ import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
 
 export type NextPageWithLayout<P = object, IP = P> = {
   getLayout?: (page: React.ReactElement) => React.ReactNode;
@@ -33,8 +34,26 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
             messages={pageProps.messages}
             timeZone='Europe/Istanbul'
           >
-            <Head />
-            {getLayout(<Component {...pageProps} />)}
+            <GoogleReCaptchaProvider
+              container={{
+                parameters: {
+                  badge: 'bottomright',
+                  theme: 'light',
+                },
+              }}
+              reCaptchaKey={
+                process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
+              }
+              scriptProps={{
+                appendTo: 'head',
+                async: true,
+                defer: true,
+                id: 'recaptcha-script',
+              }}
+            >
+              <Head />
+              {getLayout(<Component {...pageProps} />)}
+            </GoogleReCaptchaProvider>
           </NextIntlClientProvider>
         </ErrorBoundary>
       </NextThemesProvider>

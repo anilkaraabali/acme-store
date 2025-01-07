@@ -16,8 +16,10 @@
   },
   "Auth": {
     "login": {
-      "questionPrompt": "Have a question?",
-      "supportContact": "Contact us",
+      "prompt": {
+        "question": "Don't have an account yet?",
+        "cta": "Sign up"
+      },
       "title": "Log in or Sign up",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "cta": {
@@ -25,9 +27,28 @@
         "facebook": "Continue with Facebook",
         "email": "Continue with Email"
       }
+    },
+    "signUp": {
+      "title": "Sign up<br>and come on in",
+      "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+      "prompt": {
+        "question": "Already have an account?",
+        "cta": "Log in"
+      },
+      "cta": {
+        "google": "Sign up with Google",
+        "facebook": "Sign up with Facebook",
+        "email": "Sign up with Email",
+        "createAccount": "Create my free account"
+      },
+      "terms": {
+        "label": "By signing up, you agree to our <a class='underline' href='#'>Terms of Service</a> and <a class='underline' href='#'>Privacy Policy</a>.",
+        "required": "Please accept the terms and conditions to finish the signup"
+      }
     }
   },
   "Common": {
+    "or": "or",
     "newsletter": {
       "title": "Get notified when we’re launching",
       "description": "Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.",
@@ -37,20 +58,22 @@
       }
     },
     "form": {
+      "required": "This field cannot be left blank",
       "email": {
         "label": "Email",
         "placeholder": "Enter your email",
-        "required": "Email address cannot be left blank",
         "errorMessage": "Invalid email. Email must be a valid email address"
       },
       "password": {
         "label": "Password",
         "placeholder": "Enter your password",
-        "required": "Password cannot be left blank",
         "errorMessage": {
           "minLength": "Password must be at least 8 characters long"
         }
       }
+    },
+    "recaptcha": {
+      "info": "This site is protected by reCAPTCHA and the Google <a class='underline' href='https://policies.google.com/privacy'>Privacy Policy</a> and <a class='underline' href='https://policies.google.com/terms'>Terms of Service</a> apply."
     }
   },
   "Dashboard": {},
