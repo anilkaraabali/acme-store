@@ -32,16 +32,7 @@ const Header = () => {
           className='md:hidden'
         />
         <NavbarBrand>
-          <NextLink
-            aria-label='Go to homepage'
-            className='flex items-center justify-start gap-1'
-            color='foreground'
-            href='/'
-            title='Go to homepage'
-          >
-            <Logo />
-            <p className='font-bold text-inherit'>ACME</p>
-          </NextLink>
+          <Logo />
         </NavbarBrand>
       </NavbarContent>
 

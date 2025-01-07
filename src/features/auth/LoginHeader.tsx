@@ -9,33 +9,24 @@ const LoginHeader: FC = () => {
   const t = useTranslations('Auth');
 
   return (
-    <header className='px-5'>
+    <header>
       <div className='flex h-14 items-center justify-between gap-8'>
-        <NextLink
-          aria-label='Go to homepage'
-          className='flex items-center justify-start gap-1'
-          color='foreground'
-          href='/'
-          title='Go to homepage'
-        >
-          <Logo />
-          <p className='font-bold text-inherit'>ACME</p>
-        </NextLink>
-        <div className='flex items-center gap-8'>
+        <Logo />
+        <div className='flex items-center gap-4 md:gap-8'>
           <div>
-            <p className='flex gap-1 text-sm text-gray-600 dark:text-gray-300'>
-              <span className='hidden lg:flex'>
-                {t('login.questionPrompt')}
+            <p className='flex gap-1 '>
+              <span className='hidden text-sm text-default-600 lg:flex'>
+                {t('login.prompt.question')}
               </span>
               <Link
                 as={NextLink}
                 className='text-nowrap'
                 color='foreground'
-                href='#'
+                href='/signup'
                 size='sm'
                 underline='always'
               >
-                {t('login.supportContact')}
+                {t('login.prompt.cta')}
               </Link>
             </p>
           </div>

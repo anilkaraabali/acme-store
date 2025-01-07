@@ -1,7 +1,9 @@
+/* eslint-disable no-console */
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Form, Input } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
-import { useState } from 'react';
+import { useCallback, useEffect, useState } from 'react';
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ZodType, z } from 'zod';
 
@@ -11,6 +13,7 @@ type FormData = {
 
 const Newsletter = () => {
   const t = useTranslations('Common');
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
   const [isLoading, setIsLoading] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +21,7 @@ const Newsletter = () => {
   const schema: ZodType<FormData> = z.object({
     email: z
       .string()
-      .min(1, { message: t('form.email.required') })
+      .min(1, { message: t('form.required') })
       .email(t('form.email.errorMessage')),
   });
 
@@ -34,25 +37,44 @@ const Newsletter = () => {
     resolver: zodResolver(schema),
   });
 
-  const onSubmit: SubmitHandler<FormData> = async (data) => {
-    try {
-      setIsLoading(true);
-      // Send data to your API
-      // eslint-disable-next-line no-console
-      console.log(data);
+  const handleReCaptchaVerify = useCallback(async () => {
+    if (!executeRecaptcha) {
+      console.log('Execute recaptcha not yet available');
 
-      setSubmitted(true);
-      setTimeout(() => {
-        setSubmitted(false);
-      }, 3000);
-      reset();
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-    } finally {
-      setIsLoading(false);
+      return;
     }
-  };
+
+    const token = await executeRecaptcha('newsletter');
+
+    return token;
+  }, [executeRecaptcha]);
+
+  const onSubmit: SubmitHandler<FormData> = useCallback(
+    async (data) => {
+      try {
+        setIsLoading(true);
+        const token = await handleReCaptchaVerify();
+
+        // Send data to your API
+        console.log('data', data, 'token', token);
+
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 3000);
+        reset();
+      } catch (error) {
+        console.error('Newsletter error', error);
+      } finally {
+        setIsLoading(false);
+      }
+    },
+    [handleReCaptchaVerify, reset]
+  );
+
+  useEffect(() => {
+    handleReCaptchaVerify();
+  }, [handleReCaptchaVerify]);
 
   return (
     <section
@@ -60,10 +82,10 @@ const Newsletter = () => {
       id='newsletter'
     >
       <div className='relative isolate flex w-full max-w-7xl flex-col overflow-hidden bg-gray-900 px-6 py-24 text-background shadow sm:px-24 xl:rounded-3xl'>
-        <h2 className='text-center text-4xl font-semibold tracking-tight lg:text-5xl dark:text-white'>
+        <h2 className='text-center text-4xl font-semibold tracking-tight text-white lg:text-5xl'>
           {t('newsletter.title')}
         </h2>
-        <p className='mx-auto mt-6 max-w-lg text-center text-lg text-gray-300'>
+        <p className='mx-auto mt-6 max-w-lg text-center text-lg text-default-500'>
           {t('newsletter.description')}
         </p>
         <Form
