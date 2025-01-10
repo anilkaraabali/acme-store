@@ -8,7 +8,7 @@ const SignUpHeader: FC = () => {
   const t = useTranslations('Auth');
 
   return (
-    <div className='flex h-14 items-center justify-between gap-8 px-6 py-2'>
+    <header className='flex h-14 items-center justify-between gap-8 px-6 py-2'>
       <LanguageSwitch
         triggerButtonProps={{
           size: 'sm',
@@ -28,7 +28,7 @@ const SignUpHeader: FC = () => {
           {t('signUp.prompt.cta')}
         </Link>
       </div>
-    </div>
+    </header>
   );
 };
 

@@ -19,7 +19,7 @@ function SignUp() {
 
   return (
     <div className='flex h-screen w-screen'>
-      <section className='hidden w-full flex-1 flex-col items-center justify-center overflow-hidden bg-foreground lg:flex'>
+      <aside className='hidden w-full flex-1 flex-col items-center justify-center overflow-hidden bg-foreground lg:flex'>
         <div className='flex w-full max-w-sm flex-col'>
           <h1
             className='mb-9 text-center text-4xl text-background'
@@ -33,11 +33,11 @@ function SignUp() {
             width={420}
           />
         </div>
-      </section>
+      </aside>
       <section className='flex w-full flex-1 shrink grow basis-[10%] flex-col overflow-hidden rounded-l-[16px] bg-background lg:-ml-4'>
         <SignUpHeader />
-        <div className='mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5'>
-          <Logo />
+        <main className='mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5'>
+          <Logo size='md' />
           <p className='my-6 text-center text-2xl font-extralight text-default-500'>
             {t('Auth.signUp.description')}
           </p>
@@ -91,7 +91,7 @@ function SignUp() {
           ) : (
             <SignUpForm />
           )}
-        </div>
+        </main>
       </section>
     </div>
   );

@@ -1,51 +1,40 @@
 import { Button, Link } from '@nextui-org/react';
+import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
-import { LiaArrowRightSolid } from 'react-icons/lia';
 
 const Hero: FC = () => {
   const t = useTranslations('Home.hero');
 
   return (
-    <div className='relative isolate px-6 lg:px-8'>
-      <div className='mx-auto max-w-2xl py-32 sm:py-48 lg:py-56'>
-        <div className='hidden sm:mb-8 sm:flex sm:justify-center'>
-          <div className='relative flex items-center gap-1 rounded-full px-3 py-1 text-sm/6 text-default-600 ring-1 ring-default-900/10 hover:ring-default-900/20'>
-            {t('announce.title')}{' '}
-            <Link
-              anchorIcon={<LiaArrowRightSolid size={16} />}
-              className='font-semibold'
-              color='primary'
-              href='#'
-              showAnchorIcon
-            >
-              {t('announce.cta')}
-            </Link>
+    <section className='py-12 lg:py-8' id='hero'>
+      <div className='mx-auto flex max-w-7xl flex-col gap-8 px-6 lg:flex-row lg:gap-12'>
+        <div className='flex w-full flex-col items-center justify-center gap-8 lg:order-2 lg:w-1/2 lg:items-start'>
+          <div className='flex flex-col gap-8 text-center lg:text-left'>
+            <h1 className='text-balance text-5xl tracking-tight lg:text-7xl'>
+              {t('title')}
+            </h1>
+            <p
+              className='text-pretty text-base lg:text-xl'
+              dangerouslySetInnerHTML={{ __html: t.raw('description') }}
+            />
           </div>
-        </div>
-        <div className='text-center'>
-          <h1 className='text-balance text-5xl font-semibold tracking-tight text-foreground sm:text-7xl'>
-            {t('title')}
-          </h1>
-          <p className='mt-8 text-pretty text-lg font-medium text-gray-500 sm:text-xl/8'>
-            {t('description')}
-          </p>
-        </div>
-        <div className='mt-10 flex items-center justify-center gap-x-6'>
-          <Button as={Link} color='primary' href='#'>
-            {t('cta.primary')}
+          <Button as={Link} color='primary' href='/signup'>
+            {t('cta')}
           </Button>
-          <Link
-            anchorIcon={<LiaArrowRightSolid size={16} />}
-            color='foreground'
-            href='#'
-            showAnchorIcon
-          >
-            {t('cta.secondary')}
-          </Link>
+        </div>
+        <div className='w-full lg:w-1/2'>
+          <Image
+            alt='Hero Image'
+            className='w-full'
+            height='1258'
+            priority
+            src='/images/poll-maker-hero.webp'
+            width='1256'
+          />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
