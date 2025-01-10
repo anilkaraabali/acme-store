@@ -65,7 +65,7 @@ function Login() {
         <div className='h-[calc(100%-50px)] w-full overflow-hidden pt-4 md:pt-12 lg:flex lg:gap-x-3'>
           <div className='flex w-full items-start justify-center px-4 lg:w-1/2 lg:items-center'>
             <div className='min-h-[500px] max-w-[400px]'>
-              <div className='flex w-full flex-col items-center justify-center gap-12 '>
+              <div className='flex w-full flex-col items-center justify-center gap-12'>
                 <div className='flex flex-col gap-2'>
                   <h1 className='text-3xl font-medium tracking-tight lg:text-4xl'>
                     {t('Auth.login.title')}
@@ -147,7 +147,7 @@ function Login() {
               </div>
             </div>
           </div>
-          <div className='relative hidden items-center justify-center md:w-1/2 lg:flex'>
+          <aside className='relative hidden items-center justify-center md:w-1/2 lg:flex'>
             <div className='z-10 p-4'>
               <LoginSVG />
             </div>
@@ -162,7 +162,7 @@ function Login() {
                 <rect fill='#ECB462' height='600' rx='150' width='996' />
               </svg>
             </div>
-          </div>
+          </aside>
         </div>
       </div>
     </div>

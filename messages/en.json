@@ -79,41 +79,30 @@
   "Dashboard": {},
   "Home": {
     "hero": {
-      "title": "Data to enrich your online business",
-      "description": "Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo. Elit sunt amet fugiat veniam occaecat.",
-      "cta": {
-        "primary": "Get started",
-        "secondary": "Learn more"
-      },
-      "announce": {
-        "title": "Announcing our next round of funding.",
-        "cta": "Read more"
-      }
+      "title": "Get to know your customers with forms worth filling out",
+      "description": "Collect all the data you need to <b>understand customers</b> with forms designed to be refreshingly different",
+      "cta": "Get started—it's free"
     },
     "blog": {
       "title": "From the blog",
       "description": "Learn how to grow your business with our expert advice."
     },
-    "stats": {
-      "title": "Our track record",
-      "subtitle": "Trusted by thousands of creators worldwide",
-      "description": "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.",
-      "creators": {
-        "title": "Creators on the platform",
-        "value": "8,000+"
+    "featured": {
+      "surveys": {
+        "caption": "Forms, surveys, and quizzes",
+        "title": "Get up to 3.5x more data about them",
+        "description": "When your forms break the norm, more people fill them out. Think branded designs, video content, and relevant follow-up questions.",
+        "cta": "Sign up"
       },
-      "platformFee": {
-        "title": "Flat platform fee",
-        "value": "3%"
-      },
-      "uptime": {
-        "title": "Uptime guarantee",
-        "value": "99.9%"
-      },
-      "payouts": {
-        "title": "Paid out to creators",
-        "value": "$70M"
+      "ai": {
+        "caption": "Customer Intelligence",
+        "title": "Use that data to guide your next move",
+        "description": "What led customers to you. Their opinions. How they decide what to buy. Data can tell you a lot and our AI analysis can help you make sense of it all.",
+        "cta": "Sign up"
       }
+    },
+    "lookup": {
+      "title": "Acme helps you<br>understand customers"
     }
   }
 }

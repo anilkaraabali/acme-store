@@ -60,6 +60,7 @@ module.exports = {
     'jest-dom',
     'jest-formatting',
     'testing-library',
+    'tailwindcss',
   ],
   root: true,
   rules: {
@@ -88,6 +89,14 @@ module.exports = {
     'import/newline-after-import': 'error',
     'jsx-a11y/click-events-have-key-events': 'warn',
     'jsx-a11y/interactive-supports-focus': 'warn',
+    'max-len': [
+      'error',
+      {
+        code: 80,
+        ignoreStrings: true, // Prevent errors on long Tailwind class strings
+        ignoreTemplateLiterals: false, // Enforce breaks for template literals
+      },
+    ],
     'max-params': 'error',
     'no-console': 'warn',
     'padding-line-between-statements': [

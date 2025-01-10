@@ -123,7 +123,7 @@ const Newsletter = () => {
         </Form>
         <svg
           aria-hidden='true'
-          className=' absolute left-1/2 -z-10 -translate-x-1/2'
+          className='absolute left-1/2 -z-10 -translate-x-1/2'
           height={1024}
           viewBox='0 0 1024 1024'
           width={1024}

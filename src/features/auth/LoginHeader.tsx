@@ -14,7 +14,7 @@ const LoginHeader: FC = () => {
         <Logo />
         <div className='flex items-center gap-4 md:gap-8'>
           <div>
-            <p className='flex gap-1 '>
+            <p className='flex gap-1'>
               <span className='hidden text-sm text-default-600 lg:flex'>
                 {t('login.prompt.question')}
               </span>
