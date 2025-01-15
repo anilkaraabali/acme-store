@@ -6,7 +6,7 @@ Acme Store is a modern, fully-featured e-commerce web application built with the
 
 Check out the live demo of Acme Store!
 
-[Demo](https://acme-store-kappa.vercel.app/)
+[Demo](https://acme-store-sage.vercel.app/)
 
 Feel free to explore and interact with the store's features.
 
