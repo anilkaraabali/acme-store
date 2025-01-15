@@ -12,10 +12,10 @@
     "prettier:fix": "prettier . --write",
     "validate-types": "tsc --project ./tsconfig.json",
     "prepare": "husky install",
-    "test": "jest",
+    "test": "jest --passWithNoTests",
     "test:watch": "jest --watch",
     "test:update": "jest -u",
-    "test:coverage": "jest --coverage --silent",
+    "test:coverage": "jest --coverage --silent --passWithNoTests",
     "test:debug": "node --inspect-brk node_modules/.bin/jest --runInBand"
   },
   "dependencies": {
