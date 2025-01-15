@@ -8,6 +8,7 @@ import {
 } from '@nextui-org/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
+import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 import { LiaAngleDownSolid, LiaGlobeSolid } from 'react-icons/lia';
 
@@ -27,6 +28,7 @@ interface LanguageSwitchProps {
 }
 
 const LanguageSwitch: FC<LanguageSwitchProps> = ({ triggerButtonProps }) => {
+  const t = useTranslations('Common');
   const { locale, route } = useRouter();
 
   const activeLocale = locales.find((l) => l.value === locale);
@@ -35,10 +37,10 @@ const LanguageSwitch: FC<LanguageSwitchProps> = ({ triggerButtonProps }) => {
     <Dropdown>
       <DropdownTrigger>
         <Button
-          aria-label='Language switch'
+          aria-label={t('languageSwitch.button.ariaLabel')}
           endContent={<LiaAngleDownSolid size={16} />}
           startContent={<LiaGlobeSolid size={24} />}
-          title='Language switch'
+          title={t('languageSwitch.button.title')}
           variant='bordered'
           {...triggerButtonProps}
         >
@@ -46,7 +48,7 @@ const LanguageSwitch: FC<LanguageSwitchProps> = ({ triggerButtonProps }) => {
         </Button>
       </DropdownTrigger>
       <DropdownMenu
-        aria-label='Language selection menu'
+        aria-label={t('languageSwitch.menu.ariaLabel')}
         id='language-dropdown-menu'
         variant='faded'
       >
@@ -61,8 +63,8 @@ const LanguageSwitch: FC<LanguageSwitchProps> = ({ triggerButtonProps }) => {
             title={
               <>
                 {locale.label}{' '}
-                {locale.value === 'tr' && (
-                  <Code color='secondary'>Coming soon</Code>
+                {locale.value !== 'en' && (
+                  <Code color='secondary'>{t('comingSoon')}</Code>
                 )}
               </>
             }
