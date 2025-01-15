@@ -48,20 +48,7 @@
     }
   },
   "Common": {
-    "cta": {
-      "signIn": "Sign in",
-      "noThanks": "No, thanks"
-    },
     "or": "or",
-    "homepage": {
-      "title": "Go to homepage",
-      "ariaLabel": "Go to homepage"
-    },
-    "theme": {
-      "dark": "Dark theme",
-      "light": "Light theme",
-      "system": "System theme"
-    },
     "newsletter": {
       "title": "Get notified when we’re launching",
       "description": "Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.",
@@ -89,29 +76,7 @@
       "info": "This site is protected by reCAPTCHA and the Google <a class='underline' href='https://policies.google.com/privacy'>Privacy Policy</a> and <a class='underline' href='https://policies.google.com/terms'>Terms of Service</a> apply."
     }
   },
-  "Footer": {
-    "solutions": "Solutions",
-    "marketing": "Marketing",
-    "analytics": "Analytics",
-    "automation": "Automation",
-    "commerce": "Commerce",
-    "insights": "Insights",
-    "support": "Support",
-    "submitTicket": "Submit ticket",
-    "documentation": "Documentation",
-    "guides": "Guides",
-    "company": "Company",
-    "about": "About",
-    "blog": "Blog",
-    "jobs": "Jobs",
-    "press": "Press",
-    "legal": "Legal",
-    "termsOfService": "Terms of service",
-    "privacyPolicy": "Privacy policy",
-    "license": "License",
-    "copyright": "© 2025 Acme Store, Inc. All rights reserved.",
-    "tagline": "Making the world a better place through constructing elegant hierarchies."
-  },
+  "Dashboard": {},
   "Home": {
     "hero": {
       "title": "Get to know your customers with forms worth filling out",

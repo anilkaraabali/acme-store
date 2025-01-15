@@ -15,84 +15,84 @@ type SiteConfig = typeof siteConfig;
 const siteConfig = {
   footerItems: [
     {
-      children: [
+      items: [
         {
           href: '#',
-          translationKey: 'marketing',
+          title: 'Marketing',
         },
         {
           href: '#',
-          translationKey: 'analytics',
+          title: 'Analytics',
         },
         {
           href: '#',
-          translationKey: 'automation',
+          title: 'Automation',
         },
         {
           href: '#',
-          translationKey: 'commerce',
+          title: 'Commerce',
         },
         {
           href: '#',
-          translationKey: 'insights',
+          title: 'Insights',
         },
       ],
-      translationKey: 'solutions',
+      title: 'Solutions',
     },
     {
-      children: [
+      items: [
         {
           href: '#',
-          translationKey: 'submitTicket',
+          title: 'Submit ticket',
         },
         {
           href: '#',
-          translationKey: 'documentation',
+          title: 'Documentation',
         },
         {
           href: '#',
-          translationKey: 'guides',
+          title: 'Guides',
         },
       ],
-      translationKey: 'support',
+      title: 'Support',
     },
     {
-      children: [
+      items: [
         {
           href: '#',
-          translationKey: 'about',
+          title: 'About',
         },
         {
           href: '#',
-          translationKey: 'blog',
+          title: 'Blog',
         },
         {
           href: '#',
-          translationKey: 'jobs',
+          title: 'Jobs',
         },
         {
           href: '#',
-          translationKey: 'press',
+          title: 'Press',
         },
       ],
-      translationKey: 'company',
+      title: 'Company',
     },
     {
-      children: [
+      items: [
         {
           href: '#',
-          translationKey: 'termsOfService',
+          title: 'Terms of service',
         },
         {
           href: '#',
-          translationKey: 'privacyPolicy',
+          title: 'Privacy Policy',
         },
         {
           href: '#',
-          translationKey: 'license',
+          title: 'License',
         },
       ],
-      translationKey: 'legal',
+      title: 'Legal',
     },
   ],
   navItems: [

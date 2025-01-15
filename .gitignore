@@ -42,6 +42,3 @@ next-env.d.ts
 
 # platform
 /iOS
-
-# env
-.env.local

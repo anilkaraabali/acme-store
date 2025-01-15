@@ -1,19 +1,15 @@
 import type { GetServerSideProps } from 'next';
 
-import { HomeProps } from '@/features/home';
-import { LocaleType } from '@/types';
-import { getMessages } from '@/utils';
+import { HomeProps } from '@/features/home/Home';
+import { pick } from 'radash';
 
-export const getServerSideProps = (async (ctx) => {
-  const locale = (
-    ctx.locale !== undefined && ctx.locale !== 'en' ? ctx.locale : 'en'
-  ) as LocaleType;
+export const getServerSideProps = (async (ctx) => ({
+  props: {
+    messages: pick(
+      (await import(`../../messages/${ctx.locale}.json`)).default,
+      ['Common', 'Home']
+    ),
+  },
+})) satisfies GetServerSideProps<HomeProps>;
 
-  return {
-    props: {
-      messages: await getMessages(locale, ['Home']),
-    },
-  };
-}) satisfies GetServerSideProps<HomeProps>;
-
-export { default } from '@/features/home';
+export { default } from '@/features/home/Home';

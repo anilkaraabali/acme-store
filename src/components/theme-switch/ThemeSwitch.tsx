@@ -1,12 +1,9 @@
 import { Button, ButtonGroup } from '@nextui-org/react';
-import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';
 import { LiaDesktopSolid, LiaMoonSolid, LiaSunSolid } from 'react-icons/lia';
 
 const ThemeSwitch: FC = () => {
-  const t = useTranslations('Common');
-
   const [isMounted, setIsMounted] = useState(false);
 
   const { setTheme } = useTheme();
@@ -21,26 +18,26 @@ const ThemeSwitch: FC = () => {
   return (
     <ButtonGroup radius='full' variant='flat'>
       <Button
-        aria-label={t('theme.light')}
+        aria-label='Light theme'
         isIconOnly
         onPress={() => setTheme('light')}
-        title={t('theme.light')}
+        title='Light theme'
       >
         <LiaSunSolid size={20} />
       </Button>
       <Button
-        aria-label={t('theme.system')}
+        aria-label='System theme'
         isIconOnly
         onPress={() => setTheme('system')}
-        title={t('theme.system')}
+        title='System theme'
       >
         <LiaDesktopSolid size={20} />
       </Button>
       <Button
-        aria-label={t('theme.dark')}
+        aria-label='Dark theme'
         isIconOnly
         onPress={() => setTheme('dark')}
-        title={t('theme.dark')}
+        title='Dark theme'
       >
         <LiaMoonSolid size={20} />
       </Button>
