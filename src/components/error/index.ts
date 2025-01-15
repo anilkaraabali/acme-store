@@ -1,2 +1,1 @@
-export * from './error';
-export * from './error-boundary';
+export * from './ErrorBoundary';

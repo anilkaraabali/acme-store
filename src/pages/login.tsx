@@ -1,19 +1,15 @@
 import type { GetServerSideProps } from 'next';
 
-import { LoginProps } from '@/features/auth/login';
-import { LocaleType } from '@/types';
-import { getMessages } from '@/utils';
+import { LoginProps } from '@/features/auth/Login';
+import { pick } from 'radash';
 
-export const getServerSideProps = (async (ctx) => {
-  const locale = (
-    ctx.locale !== undefined && ctx.locale !== 'en' ? ctx.locale : 'en'
-  ) as LocaleType;
+export const getServerSideProps = (async (ctx) => ({
+  props: {
+    messages: pick(
+      (await import(`../../messages/${ctx.locale}.json`)).default,
+      ['Common', 'Auth']
+    ),
+  },
+})) satisfies GetServerSideProps<LoginProps>;
 
-  return {
-    props: {
-      messages: await getMessages(locale, ['Auth']),
-    },
-  };
-}) satisfies GetServerSideProps<LoginProps>;
-
-export { default } from '@/features/auth/login';
+export { default } from '@/features/auth/Login';

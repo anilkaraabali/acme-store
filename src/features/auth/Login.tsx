@@ -9,7 +9,7 @@ import { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
 import { ZodType, z } from 'zod';
 
-import { LoginHeader } from './header';
+import { LoginHeader } from './LoginHeader';
 
 type FormData = {
   email: string;
