@@ -1,9 +1,9 @@
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 
-import { Blog } from './Blog';
-import { Collaboration } from './Collaboration';
-import { FeaturedSection } from './FeaturedSection';
-import { Hero } from './Hero';
+import { Blog } from './blog';
+import { Collaboration } from './collaboration';
+import { FeaturedSection } from './featured-section';
+import { Hero } from './hero';
 
 interface HomeProps {
   messages: AbstractIntlMessages;

@@ -5,8 +5,8 @@ import Image from 'next/image';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import { SignUpForm } from './SignUpForm';
-import { SignUpHeader } from './SignUpHeader';
+import { SignUpForm } from './form';
+import { SignUpHeader } from './header';
 
 interface SignUpProps {
   messages: AbstractIntlMessages;
