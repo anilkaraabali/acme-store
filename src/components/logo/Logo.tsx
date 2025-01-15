@@ -1,5 +1,6 @@
 import clsx from 'clsx';
 import NextLink from 'next/link';
+import { useTranslations } from 'next-intl';
 import { ComponentPropsWithRef, forwardRef } from 'react';
 
 interface LogoProps extends ComponentPropsWithRef<'svg'> {
@@ -8,15 +9,17 @@ interface LogoProps extends ComponentPropsWithRef<'svg'> {
 
 const Logo = forwardRef<SVGSVGElement, LogoProps>(
   ({ size = 'sm', ...props }, ref) => {
+    const t = useTranslations('Common');
+
     const width = size === 'sm' ? 36 : size === 'md' ? 48 : 64;
 
     return (
       <NextLink
-        aria-label='Go to homepage'
+        aria-label={t('homepage.ariaLabel')}
         className='flex items-center justify-start gap-1'
         color='foreground'
         href='/'
-        title='Go to homepage'
+        title={t('homepage.title')}
       >
         <svg
           fill='none'

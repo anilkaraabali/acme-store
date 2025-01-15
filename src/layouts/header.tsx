@@ -18,10 +18,13 @@ import {
   DropdownTrigger,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { LiaAngleDownSolid, LiaArrowRightSolid } from 'react-icons/lia';
 
 const Header = () => {
+  const t = useTranslations();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -95,7 +98,7 @@ const Header = () => {
           href='/login'
           variant='shadow'
         >
-          Log in
+          {t('Common.cta.signIn')}
         </Button>
       </NavbarContent>
 
