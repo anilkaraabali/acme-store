@@ -4,16 +4,16 @@ import { IUser, readUsersFromFile } from '@/features/auth';
 import { compare } from 'bcryptjs';
 import NextAuth, { DefaultSession, DefaultUser } from 'next-auth';
 import CredentialsProvider from 'next-auth/providers/credentials';
-import FacebookProvider from 'next-auth/providers/facebook';
-import GoogleProvider from 'next-auth/providers/google';
+// import FacebookProvider from 'next-auth/providers/facebook';
+// import GoogleProvider from 'next-auth/providers/google';
 
-if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
-  throw new Error('Google credentials are missing!');
-}
+// if (!process.env.GOOGLE_CLIENT_ID || !process.env.GOOGLE_CLIENT_SECRET) {
+//   throw new Error('Google credentials are missing!');
+// }
 
-if (!process.env.FACEBOOK_CLIENT_ID || !process.env.FACEBOOK_CLIENT_SECRET) {
-  throw new Error('Facebook credentials are missing!');
-}
+// if (!process.env.FACEBOOK_CLIENT_ID || !process.env.FACEBOOK_CLIENT_SECRET) {
+//   throw new Error('Facebook credentials are missing!');
+// }
 
 const authOptions = {
   callbacks: {
@@ -42,19 +42,19 @@ const authOptions = {
     verifyRequest: '/auth/verify-request', // (used for check email message)
   },
   providers: [
-    GoogleProvider({
-      clientId: process.env.GOOGLE_CLIENT_ID!,
-      clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
-    }),
-    FacebookProvider({
-      authorization: {
-        params: {
-          scope: 'email,public_profile',
-        },
-      },
-      clientId: process.env.FACEBOOK_CLIENT_ID!,
-      clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
-    }),
+    // GoogleProvider({
+    //   clientId: process.env.GOOGLE_CLIENT_ID!,
+    //   clientSecret: process.env.GOOGLE_CLIENT_SECRET!,
+    // }),
+    // FacebookProvider({
+    //   authorization: {
+    //     params: {
+    //       scope: 'email,public_profile',
+    //     },
+    //   },
+    //   clientId: process.env.FACEBOOK_CLIENT_ID!,
+    //   clientSecret: process.env.FACEBOOK_CLIENT_SECRET!,
+    // }),
     CredentialsProvider({
       async authorize(credentials) {
         if (!credentials) {

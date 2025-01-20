@@ -1,7 +1,5 @@
 import { NextRequest, NextResponse, userAgent } from 'next/server';
 
-// export { auth as middleware } from '@/features/auth';
-
 export default function middleware(req: NextRequest): NextResponse | undefined {
   const { isBot } = userAgent(req);
 
