@@ -5,14 +5,14 @@ import Image from 'next/image';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 import { useState } from 'react';
 
-import { SignUpForm } from './SignUpForm';
-import { SignUpHeader } from './SignUpHeader';
+import { SignupForm } from './SignupForm';
+import { SignupHeader } from './SignupHeader';
 
 interface SignUpProps {
   messages: AbstractIntlMessages;
 }
 
-function SignUp() {
+function Signup() {
   const t = useTranslations();
 
   const [step, setStep] = useState(0);
@@ -34,11 +34,13 @@ function SignUp() {
           />
         </div>
       </aside>
-      <section className='flex w-full flex-1 shrink grow basis-[10%] flex-col overflow-hidden rounded-l-[16px] bg-background lg:-ml-4'>
-        <SignUpHeader />
+      <section className='flex w-full flex-1 shrink grow basis-[10%] flex-col overflow-auto rounded-l-[16px] bg-background lg:-ml-4'>
+        <SignupHeader />
         <main className='mx-auto flex w-full max-w-lg flex-1 flex-col items-center justify-center px-5'>
-          <Logo size='md' />
-          <p className='my-6 text-center text-2xl font-extralight text-default-500'>
+          <div className='flex h-20 items-center justify-center'>
+            <Logo size='md' />
+          </div>
+          <p className='mb-6 text-center text-2xl font-extralight text-default-500'>
             {t('Auth.signUp.description')}
           </p>
 
@@ -89,7 +91,7 @@ function SignUp() {
               </div>
             </>
           ) : (
-            <SignUpForm />
+            <SignupForm />
           )}
         </main>
       </section>
@@ -98,6 +100,6 @@ function SignUp() {
 }
 
 export type { SignUpProps };
-export default SignUp;
+export default Signup;
 
-SignUp.getLayout = (page: NextPageWithLayout) => page;
+Signup.getLayout = (page: NextPageWithLayout) => page;

@@ -1,3 +1,4 @@
+import { Newsletter } from '@/components/newsletter';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 
 import { Blog } from './Blog';
@@ -40,6 +41,7 @@ function Home() {
         videoSrc='https://cdn.prod.website-files.com/66ffe2174aa8e8d5661c2708%2F6731d779ad2f2aa71ae14d7e_section-2-transcode.mp4'
       />
       <Blog />
+      <Newsletter />
     </>
   );
 }

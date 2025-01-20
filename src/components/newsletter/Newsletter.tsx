@@ -51,6 +51,8 @@ const Newsletter = () => {
 
   const onSubmit: SubmitHandler<FormData> = useCallback(
     async (data) => {
+      console.log('data', data);
+
       try {
         setIsLoading(true);
         const token = await handleReCaptchaVerify();

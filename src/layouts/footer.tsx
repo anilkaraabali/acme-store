@@ -12,7 +12,7 @@ const Footer: FC = () => {
   const t = useTranslations('Footer');
 
   return (
-    <footer className='mx-auto flex h-auto w-full justify-center'>
+    <footer className='mx-auto mt-auto flex h-auto w-full justify-center'>
       <div className='flex w-full max-w-7xl flex-col px-6 pb-8 pt-24'>
         <div className='flex flex-col lg:flex-row lg:justify-between lg:gap-8'>
           <div className='flex basis-4/12 flex-col gap-4'>

@@ -1,5 +1,6 @@
 import { Logo } from '@/components/logo';
 import { siteConfig } from '@/config';
+import { UserAvatar } from '@/features/auth/user/Avatar';
 import { Link } from '@nextui-org/link';
 import {
   NavbarBrand,
@@ -18,10 +19,15 @@ import {
   DropdownTrigger,
 } from '@nextui-org/react';
 import NextLink from 'next/link';
+import { useSession } from 'next-auth/react';
+import { useTranslations } from 'next-intl';
 import { useState } from 'react';
 import { LiaAngleDownSolid, LiaArrowRightSolid } from 'react-icons/lia';
 
 const Header = () => {
+  const t = useTranslations();
+  const { data } = useSession();
+
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -88,15 +94,19 @@ const Header = () => {
       </NavbarContent>
 
       <NavbarContent justify='end'>
-        <Button
-          as={NextLink}
-          color='primary'
-          endContent={<LiaArrowRightSolid size={20} />}
-          href='/login'
-          variant='shadow'
-        >
-          Log in
-        </Button>
+        {data?.user.name ? (
+          <UserAvatar name={data.user.name} />
+        ) : (
+          <Button
+            as={NextLink}
+            color='primary'
+            endContent={<LiaArrowRightSolid size={20} />}
+            href='/auth/signin'
+            variant='shadow'
+          >
+            {t('Common.cta.signIn')}
+          </Button>
+        )}
       </NavbarContent>
 
       <NavbarMenu>

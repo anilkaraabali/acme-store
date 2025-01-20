@@ -5,7 +5,7 @@ import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 
-const LoginHeader: FC = () => {
+const SigninHeader: FC = () => {
   const t = useTranslations('Auth');
 
   return (
@@ -16,17 +16,17 @@ const LoginHeader: FC = () => {
           <div>
             <p className='flex gap-1'>
               <span className='hidden text-sm text-default-600 lg:flex'>
-                {t('login.prompt.question')}
+                {t('signIn.prompt.question')}
               </span>
               <Link
                 as={NextLink}
                 className='text-nowrap'
                 color='foreground'
-                href='/signup'
+                href='/auth/signup'
                 size='sm'
                 underline='always'
               >
-                {t('login.prompt.cta')}
+                {t('signIn.prompt.cta')}
               </Link>
             </p>
           </div>
@@ -41,4 +41,4 @@ const LoginHeader: FC = () => {
   );
 };
 
-export { LoginHeader };
+export { SigninHeader };
