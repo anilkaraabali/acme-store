@@ -1,6 +1,6 @@
 import type { GetServerSideProps } from 'next';
 
-import { LoginProps } from '@/features/auth/Login';
+import { SigninProps } from '@/features/auth/sign-in/Signin';
 import { LocaleType } from '@/types';
 import { getMessages } from '@/utils';
 
@@ -14,6 +14,6 @@ export const getServerSideProps = (async (ctx) => {
       messages: await getMessages(locale, ['Auth']),
     },
   };
-}) satisfies GetServerSideProps<LoginProps>;
+}) satisfies GetServerSideProps<SigninProps>;
 
-export { default } from '@/features/auth/Login';
+export { default } from '@/features/auth/sign-in/Signin';

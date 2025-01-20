@@ -4,7 +4,7 @@ import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 
-const SignUpHeader: FC = () => {
+const SignupHeader: FC = () => {
   const t = useTranslations('Auth');
 
   return (
@@ -21,7 +21,7 @@ const SignUpHeader: FC = () => {
         <Link
           as={NextLink}
           color='foreground'
-          href='/login'
+          href='/auth/signin'
           size='sm'
           underline='always'
         >
@@ -32,4 +32,4 @@ const SignUpHeader: FC = () => {
   );
 };
 
-export { SignUpHeader };
+export { SignupHeader };

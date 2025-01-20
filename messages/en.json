@@ -15,7 +15,7 @@
     "cta": "Return to the homepage"
   },
   "Auth": {
-    "login": {
+    "signIn": {
       "prompt": {
         "question": "Don't have an account yet?",
         "cta": "Sign up"
@@ -25,15 +25,17 @@
       "cta": {
         "google": "Continue with Google",
         "facebook": "Continue with Facebook",
-        "email": "Continue with Email"
-      }
+        "email": "Continue with Email",
+        "submit": "Sign into Acme Store"
+      },
+      "emailNotLinked": "It seems that the email you entered isn’t linked to any Acme Store account. Please check your email again or <signUpLink>sign up</signUpLink> for a new account."
     },
     "signUp": {
       "title": "Sign up<br>and come on in",
       "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
       "prompt": {
         "question": "Already have an account?",
-        "cta": "Log in"
+        "cta": "Sign in"
       },
       "cta": {
         "google": "Sign up with Google",
@@ -45,11 +47,30 @@
         "label": "By signing up, you agree to our <a class='underline' href='#'>Terms of Service</a> and <a class='underline' href='#'>Privacy Policy</a>.",
         "required": "Please accept the terms and conditions to finish the signup"
       }
+    },
+    "profile": {
+      "link": {
+        "ariaLabel": "Go to profile",
+        "title": "Profile"
+      }
+    },
+    "account": {
+      "welcome": {
+        "title": "Welcome back, {name}",
+        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "cta": "Go to dashboard"
+      }
+    },
+    "signOut": {
+      "title": "Sign out",
+      "description": "Are you sure you want to sign out?",
+      "cta": "Sign out"
     }
   },
   "Common": {
     "cta": {
       "signIn": "Sign in",
+      "signUp": "Sign up",
       "noThanks": "No, thanks"
     },
     "or": "or",
@@ -93,6 +114,11 @@
         "errorMessage": {
           "minLength": "Password must be at least 8 characters long"
         }
+      },
+      "name": {
+        "label": "Full name",
+        "placeholder": "Enter your full name",
+        "errorMessage": "Full name must be at least 2 characters long"
       }
     },
     "recaptcha": {

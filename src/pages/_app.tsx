@@ -7,6 +7,7 @@ import '@/styles/globals.css';
 import { NextUIProvider } from '@nextui-org/react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
+import { SessionProvider } from 'next-auth/react';
 import { NextIntlClientProvider } from 'next-intl';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { GoogleReCaptchaProvider } from 'react-google-recaptcha-v3';
@@ -41,9 +42,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
                   theme: 'light',
                 },
               }}
-              reCaptchaKey={
-                process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY as string
-              }
+              reCaptchaKey={process.env.RECAPTCHA_SITE_KEY!}
               scriptProps={{
                 appendTo: 'head',
                 async: true,
@@ -51,8 +50,10 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
                 id: 'recaptcha-script',
               }}
             >
-              <Head />
-              {getLayout(<Component {...pageProps} />)}
+              <SessionProvider session={pageProps.session}>
+                <Head />
+                {getLayout(<Component {...pageProps} />)}
+              </SessionProvider>
             </GoogleReCaptchaProvider>
           </NextIntlClientProvider>
         </ErrorBoundary>

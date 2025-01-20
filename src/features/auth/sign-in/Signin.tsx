@@ -3,32 +3,37 @@ import { NextPageWithLayout } from '@/pages/_app';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button, Divider, Form, Input } from '@nextui-org/react';
 import Image from 'next/image';
+import { signIn } from 'next-auth/react';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 import LoginSVG from 'public/icons/auth/login.svg';
 import { useState } from 'react';
 import { Controller, SubmitHandler, useForm } from 'react-hook-form';
+import { LiaEyeSlash, LiaEyeSolid } from 'react-icons/lia';
 import { ZodType, z } from 'zod';
 
-import { LoginHeader } from './LoginHeader';
+import { SigninEmailForm } from './SignInEmailForm';
+import { SigninHeader } from './SigninHeader';
 
 type FormData = {
-  email: string;
+  password: string;
 };
 
-interface LoginProps {
+interface SigninProps {
   messages: AbstractIntlMessages;
 }
 
-function Login() {
+function Signin() {
   const t = useTranslations();
 
   const [isLoading, setIsLoading] = useState(false);
+  const [email, setEmail] = useState('');
+  const [step, setStep] = useState(0);
+  const [isVisible, setIsVisible] = useState(false);
 
   const schema: ZodType<FormData> = z.object({
-    email: z
+    password: z
       .string()
-      .min(1, { message: t('Common.form.required') })
-      .email(t('Common.form.email.errorMessage')),
+      .min(8, { message: t('Common.form.password.errorMessage.minLength') }),
   });
 
   const {
@@ -38,21 +43,26 @@ function Login() {
     reset,
   } = useForm<FormData>({
     defaultValues: {
-      email: '',
+      password: '',
     },
     resolver: zodResolver(schema),
   });
+
+  const toggleVisibility = () => setIsVisible(!isVisible);
 
   const onSubmit: SubmitHandler<FormData> = async (data) => {
     try {
       setIsLoading(true);
 
-      // Send data to your API
-      console.log('data', data);
+      await signIn('credentials', {
+        callbackUrl: '/',
+        email,
+        password: data.password,
+      });
 
       reset();
     } catch (error) {
-      console.error('Login error', error);
+      console.error('Sign in error', error);
     } finally {
       setIsLoading(false);
     }
@@ -60,7 +70,7 @@ function Login() {
 
   return (
     <div className='flex h-screen w-screen flex-col px-5 pb-4'>
-      <LoginHeader />
+      <SigninHeader />
       <div className='flex w-full grow justify-center rounded-xl bg-content2 dark:bg-content1'>
         <div className='h-[calc(100%-50px)] w-full overflow-hidden pt-4 md:pt-12 lg:flex lg:gap-x-3'>
           <div className='flex w-full items-start justify-center px-4 lg:w-1/2 lg:items-center'>
@@ -68,10 +78,10 @@ function Login() {
               <div className='flex w-full flex-col items-center justify-center gap-12'>
                 <div className='flex flex-col gap-2'>
                   <h1 className='text-3xl font-medium tracking-tight lg:text-4xl'>
-                    {t('Auth.login.title')}
+                    {t('Auth.signIn.title')}
                   </h1>
                   <p className='mt-2 text-default-500'>
-                    {t('Auth.login.description')}
+                    {t('Auth.signIn.description')}
                   </p>
                 </div>
                 <div className='flex w-full flex-col gap-4'>
@@ -89,7 +99,7 @@ function Login() {
                     }
                     variant='bordered'
                   >
-                    {t('Auth.login.cta.google')}
+                    {t('Auth.signIn.cta.google')}
                   </Button>
                   <Button
                     className='bg-background'
@@ -105,44 +115,73 @@ function Login() {
                     }
                     variant='bordered'
                   >
-                    {t('Auth.login.cta.facebook')}
+                    {t('Auth.signIn.cta.facebook')}
                   </Button>
                   <Divider className='my-4' />
-                  <Form
-                    className='gap-4'
-                    onSubmit={handleSubmit(onSubmit)}
-                    validationBehavior='aria'
-                  >
-                    <Controller
-                      control={control}
-                      name='email'
-                      render={({ field }) => (
-                        <Input
-                          {...field}
-                          classNames={{
-                            inputWrapper: 'bg-background',
-                          }}
-                          errorMessage={errors.email?.message}
-                          isInvalid={!!errors.email?.message}
-                          isRequired
-                          placeholder={t('Common.form.email.placeholder')}
-                          size='lg'
-                          type='email'
-                          variant='faded'
-                        />
-                      )}
+                  {step === 0 ? (
+                    <SigninEmailForm
+                      onVerify={(email) => {
+                        setStep(1);
+                        setEmail(email);
+                      }}
                     />
-                    <Button
-                      color='primary'
-                      fullWidth
-                      isLoading={isLoading}
-                      size='lg'
-                      type='submit'
-                      variant='shadow'
+                  ) : (
+                    <Form
+                      className='gap-4'
+                      onSubmit={handleSubmit(onSubmit)}
+                      validationBehavior='aria'
                     >
-                      {t('Auth.login.cta.email')}
-                    </Button>
-                  </Form>
+                      <Controller
+                        control={control}
+                        name='password'
+                        render={({ field }) => (
+                          <Input
+                            {...field}
+                            classNames={{
+                              inputWrapper: 'bg-background',
+                            }}
+                            endContent={
+                              <button
+                                aria-label='toggle password visibility'
+                                className='focus:outline-none'
+                                onClick={toggleVisibility}
+                                type='button'
+                              >
+                                {isVisible ? (
+                                  <LiaEyeSlash
+                                    className='pointer-events-none text-default-400'
+                                    size={24}
+                                  />
+                                ) : (
+                                  <LiaEyeSolid
+                                    className='pointer-events-none text-default-400'
+                                    size={24}
+                                  />
+                                )}
+                              </button>
+                            }
+                            errorMessage={errors.password?.message}
+                            isInvalid={!!errors.password?.message}
+                            isRequired
+                            placeholder={t('Common.form.password.placeholder')}
+                            size='lg'
+                            type={isVisible ? 'text' : 'password'}
+                            variant='faded'
+                          />
+                        )}
+                      />
+                      <Button
+                        color='primary'
+                        fullWidth
+                        isLoading={isLoading}
+                        size='lg'
+                        type='submit'
+                        variant='shadow'
+                      >
+                        {t('Auth.signIn.cta.submit')}
+                      </Button>
+                    </Form>
+                  )}
                 </div>
               </div>
             </div>
@@ -169,7 +208,7 @@ function Login() {
   );
 }
 
-export type { LoginProps };
-export default Login;
+export type { SigninProps };
+export default Signin;
 
-Login.getLayout = (page: NextPageWithLayout) => page;
+Signin.getLayout = (page: NextPageWithLayout) => page;
