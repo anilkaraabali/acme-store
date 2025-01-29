@@ -1,4 +1,4 @@
-import { Button, Link } from '@nextui-org/react';
+import { Button, Link } from '@heroui/react';
 import Image from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';

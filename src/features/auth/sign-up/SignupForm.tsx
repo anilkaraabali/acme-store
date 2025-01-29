@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
+import { Alert, Button, Checkbox, Form, Input } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Alert, Button, Checkbox, Form, Input } from '@nextui-org/react';
 import { signIn } from 'next-auth/react';
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';

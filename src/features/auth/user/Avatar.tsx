@@ -1,4 +1,4 @@
-import { Avatar } from '@nextui-org/react';
+import { Avatar } from '@heroui/react';
 import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';

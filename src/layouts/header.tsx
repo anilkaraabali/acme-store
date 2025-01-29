@@ -1,7 +1,7 @@
 import { Logo } from '@/components/logo';
 import { siteConfig } from '@/config';
 import { UserAvatar } from '@/features/auth/user/Avatar';
-import { Link } from '@nextui-org/link';
+import { Link } from '@heroui/link';
 import {
   NavbarBrand,
   NavbarContent,
@@ -10,14 +10,14 @@ import {
   NavbarMenuItem,
   NavbarMenuToggle,
   Navbar as NextUINavbar,
-} from '@nextui-org/navbar';
+} from '@heroui/navbar';
 import {
   Button,
   Dropdown,
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import NextLink from 'next/link';
 import { useSession } from 'next-auth/react';
 import { useTranslations } from 'next-intl';

@@ -5,7 +5,7 @@ import {
   DropdownItem,
   DropdownMenu,
   DropdownTrigger,
-} from '@nextui-org/react';
+} from '@heroui/react';
 import NextLink from 'next/link';
 import { useRouter } from 'next/router';
 import { useTranslations } from 'next-intl';

@@ -1,5 +1,5 @@
 import { LanguageSwitch } from '@/components/language-switch';
-import { Link } from '@nextui-org/react';
+import { Link } from '@heroui/react';
 import NextLink from 'next/link';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
