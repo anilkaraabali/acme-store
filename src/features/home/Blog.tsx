@@ -1,4 +1,4 @@
-import { Avatar } from '@nextui-org/react';
+import { Avatar } from '@heroui/react';
 import Image, { ImageProps } from 'next/image';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';

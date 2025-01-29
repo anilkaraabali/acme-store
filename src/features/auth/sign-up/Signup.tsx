@@ -1,6 +1,6 @@
 import { Logo } from '@/components/logo';
 import { NextPageWithLayout } from '@/pages/_app';
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 import Image from 'next/image';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';
 import { useState } from 'react';

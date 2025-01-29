@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
 import { NextPageWithLayout } from '@/pages/_app';
+import { Button, Divider, Form, Input } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Divider, Form, Input } from '@nextui-org/react';
 import Image from 'next/image';
 import { signIn } from 'next-auth/react';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';

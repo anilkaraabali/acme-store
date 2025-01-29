@@ -1,4 +1,4 @@
-import { Button, ButtonGroup } from '@nextui-org/react';
+import { Button, ButtonGroup } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import { useTheme } from 'next-themes';
 import { FC, useEffect, useState } from 'react';

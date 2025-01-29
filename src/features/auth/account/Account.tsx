@@ -1,4 +1,4 @@
-import { Button } from '@nextui-org/react';
+import { Button } from '@heroui/react';
 import NextLink from 'next/link';
 import { signOut, useSession } from 'next-auth/react';
 import { AbstractIntlMessages, useTranslations } from 'next-intl';

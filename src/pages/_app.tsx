@@ -4,7 +4,7 @@ import { ErrorBoundary } from '@/components/error';
 import { fontMono, fontSans } from '@/config/fonts';
 import { DefaultLayout, Head } from '@/layouts';
 import '@/styles/globals.css';
-import { NextUIProvider } from '@nextui-org/react';
+import { HeroUIProvider } from '@heroui/react';
 import { NextPage } from 'next';
 import { useRouter } from 'next/router';
 import { SessionProvider } from 'next-auth/react';
@@ -27,7 +27,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
   const router = useRouter();
 
   return (
-    <NextUIProvider navigate={router.push}>
+    <HeroUIProvider navigate={router.push}>
       <NextThemesProvider>
         <ErrorBoundary>
           <NextIntlClientProvider
@@ -58,7 +58,7 @@ export default function App({ Component, pageProps }: AppPropsWithLayout) {
           </NextIntlClientProvider>
         </ErrorBoundary>
       </NextThemesProvider>
-    </NextUIProvider>
+    </HeroUIProvider>
   );
 }
 

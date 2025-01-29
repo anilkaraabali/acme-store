@@ -3,8 +3,8 @@ import { Logo } from '@/components/logo';
 import { ThemeSwitch } from '@/components/theme-switch';
 import { siteConfig } from '@/config';
 import { DynamicTranslationKey } from '@/types';
-import { Link } from '@nextui-org/link';
-import { Divider } from '@nextui-org/react';
+import { Link } from '@heroui/link';
+import { Divider } from '@heroui/react';
 import { useTranslations } from 'next-intl';
 import { FC } from 'react';
 

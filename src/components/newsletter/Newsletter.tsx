@@ -1,6 +1,6 @@
 /* eslint-disable no-console */
+import { Button, Form, Input } from '@heroui/react';
 import { zodResolver } from '@hookform/resolvers/zod';
-import { Button, Form, Input } from '@nextui-org/react';
 import { useTranslations } from 'next-intl';
 import { useCallback, useEffect, useState } from 'react';
 import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
